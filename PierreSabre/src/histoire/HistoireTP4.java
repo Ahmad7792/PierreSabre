@@ -18,7 +18,6 @@ public class HistoireTP4 {
 //		marco.seFaireEstorquer();
 //		marco.recevoirArgent(15);
 //		marco.boire();
-//		Yakuza yakuza = new Yakuza("Yaku Le Noir","whisky",30,"Clan des Yakuza");
 //		yakuza.direBonjour();
 //		Commerçant victime = new Commerçant("Marco",15);
 //		yakuza.parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par là ?");
@@ -28,9 +27,17 @@ public class HistoireTP4 {
 //		(Roro) - Marco prend ces 6 sous.
 //		(Marco) - 6 sous ! Je te remercie généreux donateur!
 //		
-		Ronin roro = new Ronin("Roro","shochu",60);
-		Commerçant marco = new Commerçant("Marco",10);
-		roro.direBonjour();
-		roro.donner(marco);
+//		Ronin roro = new Ronin("Roro","shochu",60);
+//		Commerçant marco = new Commerçant("Marco",10);
+//		roro.direBonjour();
+//		roro.donner(marco);
+//		(Roro) - Je t'ai retrouvé vermine, tu vas payer pour ce que tu as fait à ce pauvre
+//		marchand!
+//		(Roro) - Je t’ai eu petit yakusa!
+//		(Yaku Le Noir) - J’ai perdu mon duel et mes 45 sous, snif... J'ai déshonoré le clan de
+//		Warsong.
+		Yakuza yakuza = new Yakuza("Yaku Le Noir","whisky",45,"Warsong");
+		Ronin roro = new Ronin("Roro","shochu",54);
+		roro.provoquer(yakuza);
 	}
 }
