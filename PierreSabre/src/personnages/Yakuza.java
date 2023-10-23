@@ -13,5 +13,6 @@ public class Yakuza extends Humain {
 		int ArgentVole = victime.seFaireEstorquer();
 		this.gagnerArgent(ArgentVole);
 		this.parler("J’ai piqué les "+ArgentVole +" sous de "+ victime.getNom() + ", ce qui me fait " +this.getCapital() +" sous dans ma poche. Hi ! Hi !");
+		this.reputation++;
 	}
 }
