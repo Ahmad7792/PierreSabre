@@ -16,10 +16,10 @@ public class Humain {
 	public int getCapital() {
 		return capital;
 	}
-	public void gagnerArgent(int gain) {
+	protected void gagnerArgent(int gain) {
 		this.capital+=gain;
 	}
-	public void perdreArgent(int perte) {
+	protected void perdreArgent(int perte) {
 		this.capital-=perte;
 	}
 	public void parler(String texte) {
