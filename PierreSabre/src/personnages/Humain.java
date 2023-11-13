@@ -1,14 +1,18 @@
 package personnages;
 
 public class Humain {
+	private static int MAX_MEMOIRE = 30;
 	private String nom;
 	private String boissonFavorite;
 	private int capital;
+	protected int nbConnaissances = 0;
+	protected Humain[] memoire;
 	public Humain(String nom, String boissonFavorite, int capital) {
 		super();
 		this.nom = nom;
 		this.boissonFavorite = boissonFavorite;
 		this.capital = capital;
+		this.memoire = new Humain[MAX_MEMOIRE];
 	}
 	public String getNom() {
 		return nom;
@@ -40,4 +44,43 @@ public class Humain {
 			parler("Je n'ai plus que " + this.capital + " sous en poche. Je ne peux même pas m'offrir " + bien + " à " + prix + " sous...");
 		}
 	}
+	
+	private void memoriser(Humain autreHumain) {
+		if (this.nbConnaissances == MAX_MEMOIRE) {
+			for(int i=0;i<MAX_MEMOIRE-1;i++) {
+				memoire[i] = memoire[i+1];
+			}
+			memoire[MAX_MEMOIRE - 1] = autreHumain;
+		}
+		else {
+			this.memoire[nbConnaissances] = autreHumain;
+			nbConnaissances++;
+		}
+	}
+	
+	private void repondre(Humain autreHumain) {
+		this.direBonjour();
+		this.memoriser(autreHumain);
+	}
+	
+	public void faireConnaissanceAvec(Humain autreHumain) {
+		this.direBonjour();
+		autreHumain.repondre(this);
+		this.memoriser(autreHumain);		
+	}
+	
+	public void listerConnaissances() {
+		if (nbConnaissances > 0) {
+			System.out.print("Je connais beaucoup de monde dont : ");
+			System.out.print(memoire[0].getNom());
+			for (int i=1;i<nbConnaissances;i++) {
+				System.out.print(", " + memoire[i].getNom());
+			}
+			System.out.println(".");
+		}
+		else {
+			System.out.println("Je ne connais malheureusement personne.");
+		}
+	}
+
 }
