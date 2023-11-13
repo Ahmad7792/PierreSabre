@@ -2,8 +2,8 @@ package personnages;
 
 public class Humain {
 	private static int MAX_MEMOIRE = 30;
-	private String nom;
-	private String boissonFavorite;
+	protected String nom;
+	protected String boissonFavorite;
 	private int capital;
 	protected int nbConnaissances = 0;
 	protected Humain[] memoire;
