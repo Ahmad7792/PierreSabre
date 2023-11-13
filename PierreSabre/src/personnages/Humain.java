@@ -71,7 +71,7 @@ public class Humain {
 	
 	public void listerConnaissances() {
 		if (nbConnaissances > 0) {
-			System.out.print("Je connais beaucoup de monde dont : ");
+			System.out.print("(" +this.nom+ ") -" + "Je connais beaucoup de monde dont : ");
 			System.out.print(memoire[0].getNom());
 			for (int i=1;i<nbConnaissances;i++) {
 				System.out.print(", " + memoire[i].getNom());
@@ -79,7 +79,7 @@ public class Humain {
 			System.out.println(".");
 		}
 		else {
-			System.out.println("Je ne connais malheureusement personne.");
+			this.parler("Je ne connais malheureusement personne.");
 		}
 	}
 
